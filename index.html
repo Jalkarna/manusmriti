@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manusmṛti — a listening edition</title>
+<meta name="theme-color" content="#0a0806">
+<meta name="description" content="The Manusmṛti in twelve adhyāyas and 2,684 ślokas, set as a reading score with a line-by-line synthetic recitation. Sanskrit text from the Sanskrit Wikisource contributors (CC BY-SA 4.0).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0806'/%3E%3Ccircle cx='16' cy='16' r='7' fill='none' stroke='%23c9a05a' stroke-width='1.2'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23c9a05a'/%3E%3C/svg%3E">
+<link rel="preload" href="assets/fonts/noto-serif-devanagari.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/edition.css">
+</head>
+<body>
+<a class="skip" href="#edition">Skip to the text</a>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="mark" href="#top">
+    <span class="mark-dev" lang="sa">मनुस्मृति</span>
+    <span class="mark-lat">MANUSMṚTI</span>
+  </a>
+  <p class="bar-ref" id="barRef" aria-live="polite">ADHYĀYA ०१ · ŚLOKA ००१</p>
+  <nav class="bar-nav">
+    <a href="#edition">TEXT</a>
+    <a href="#notes">NOTES</a>
+  </nav>
+</header>
+
+<main>
+  <section class="overture" id="top">
+    <div class="ov">
+      <p class="kicker rv">SANSKRIT RECITATION · LISTENING EDITION</p>
+      <h1 class="dev-title rv" lang="sa">मनुस्मृति</h1>
+      <p class="lat-title rv">Manusmṛti<span aria-hidden="true">.</span></p>
+      <p class="lede rv">Twelve adhyāyas, two thousand six hundred and eighty-four ślokas,
+        held against a synthetic recitation and read as one continuous score. The verse you
+        hear is the verse you see, line by line.</p>
+      <div class="ov-actions rv">
+        <button class="begin" id="begin">Begin the recitation</button>
+        <a class="quiet" href="#edition">Read the text</a>
+        <a class="quiet" id="sampleFilm" href="#edition">Watch the sample film</a>
+      </div>
+    </div>
+    <dl class="stats rv">
+      <div><dt>ADHYĀYA</dt><dd>12</dd></div>
+      <div><dt>ŚLOKAS</dt><dd>2,684</dd></div>
+      <div><dt>HALF-VERSES</dt><dd>5,368</dd></div>
+      <div><dt>VOICE</dt><dd>Vāgdhenu · synthetic</dd></div>
+    </dl>
+    <div class="scroll-cue" aria-hidden="true"><i></i><span>SCROLL</span></div>
+  </section>
+
+  <section class="room" id="edition">
+    <aside class="spine">
+      <h2 class="spine-head">ADHYĀYA</h2>
+      <ol class="spine-list" id="spine"></ol>
+      <p class="spine-foot">Kullūka sequence<br>2,684 ślokas</p>
+    </aside>
+    <div class="score">
+      <header class="ch-head" id="chHead">
+        <span class="ch-num" id="chNum" lang="sa">०१</span>
+        <div class="ch-title">
+          <h2 id="chName">Adhyāya one</h2>
+          <p class="ch-meta" id="chMeta">Loading the edition…</p>
+        </div>
+        <div class="ch-links" id="chLinks"></div>
+        <img class="plate" id="plate" src="assets/plate.webp" alt="" aria-hidden="true">
+      </header>
+      <div class="stream" id="stream" role="list"></div>
+    </div>
+  </section>
+
+  <section class="notes" id="notes">
+    <div class="notes-inner">
+      <h2 class="notes-title">Edition notes</h2>
+      <div class="notes-grid">
+        <div class="note">
+          <h3>What this is</h3>
+          <p>The text is the Kullūka (K) verse sequence of the Manusmṛti, 2,684 verses in
+            twelve chapters, each verse divided into its two half-verses. It is a transcription
+            of a particular electronic text, not a critical reconstruction or a new collation
+            against manuscripts.</p>
+          <p>The recitation is <strong>synthetic</strong>: every half-verse is spoken by a
+            neural voice model, not by a human reciter. It is useful for pacing and listening;
+            it carries no claim to a traditional recitation lineage, and its pronunciation
+            should not be treated as authority on Vedic or śāstric chanting.</p>
+        </div>
+        <div class="note">
+          <h3>Text and licence</h3>
+          <p>The Devanagari was extracted from revisions by the contributors to
+            <a href="https://sa.wikisource.org/wiki/मनुस्मृतिः">Sanskrit Wikisource</a>,
+            retrieved 21 November 2026. The Wikisource text is available under
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>;
+            this extraction and edition are shared under the same licence.</p>
+          <p>Editorial decisions: only verse labels were changed where the electronic text
+            mislabelled a verse; alternate M numbers were dropped; four M-only verses were
+            excluded without shifting any K number; HTML, daṇḍas, stray brackets and a
+            zero-width space were removed. Sanskrit spellings were not modernised.</p>
+        </div>
+        <div class="note">
+          <h3>Voice</h3>
+          <p>Audio is generated with the
+            <a href="https://github.com/prathoshap/vagdhenu">Vāgdhenu</a> Sanskrit
+            text-to-speech research model (Prathosh A. P. and contributors) running on
+            Kaggle GPUs at 32 diffusion steps, assembled into one track per chapter with
+            per-half-verse timings taken from the rendered durations.</p>
+          <p>Line timings are exact; the karaoke sweep within a line is interpolated across
+            its syllables in proportion to their length, as it is in any karaoke reader.</p>
+        </div>
+        <div class="note">
+          <h3>Plates and type</h3>
+          <p>The chapter plate is Thomas Daniell, <em>Dasasamadhi Ghat on the Ganges at
+            Varanasi</em>, hand-coloured aquatint, May 1796. Wellcome Collection 27607i,
+            public domain mark; it is used here as a frontispiece, not as a depiction of the
+            text’s own time or place.</p>
+          <p>Typefaces: Noto Serif Devanagari (SIL OFL), Fraunces (SIL OFL), IBM Plex Mono
+            (SIL OFL). The three-dimensional field is generated live in WebGL; nothing on this
+            page is a photograph of a sphere.</p>
+        </div>
+      </div>
+      <table class="sources">
+        <caption>Chapter sources · Sanskrit Wikisource revisions</caption>
+        <thead><tr><th>Adhyāya</th><th>Ślokas</th><th>Revision</th></tr></thead>
+        <tbody id="sourceRows"></tbody>
+      </table>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>Manusmṛti · listening edition</span>
+  <p>Text adapted from <a href="https://sa.wikisource.org/wiki/मनुस्मृतिः">Sanskrit Wikisource
+    contributors</a>, CC BY-SA 4.0. Synthetic recitation by
+    <a href="https://github.com/prathoshap/vagdhenu">Vāgdhenu</a>. Plate: Thomas Daniell,
+    1796, Wellcome Collection, public domain.</p>
+</footer>
+
+<div class="transport" id="transport" data-state="idle">
+  <button class="tp-play" id="play" aria-label="Play recitation"><svg viewBox="0 0 24 24" aria-hidden="true"><path id="playIcon" d="M8 5.5v13L19 12z"/></svg></button>
+  <div class="tp-rail" id="rail" role="slider" tabindex="0" aria-label="Playback position" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+    <div class="tp-ticks" id="ticks"></div>
+    <div class="tp-fill" id="fill"></div>
+    <div class="tp-knob" id="knob"></div>
+  </div>
+  <span class="tp-time" id="time">0:00 / 0:00</span>
+  <label class="tp-rate"><select id="rate" aria-label="Playback speed"><option value="0.75">0.75×</option><option selected value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label>
+  <span class="tp-voice" id="tpVoice">VĀGDHENU · SYNTHETIC</span>
+</div>
+<audio id="audio" preload="metadata"></audio>
+
+<script src="assets/lattice.js"></script>
+<script src="assets/edition.js"></script>
+</body>
+</html>
